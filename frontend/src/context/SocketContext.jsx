@@ -12,10 +12,10 @@ export const SocketContextProvider = ({ children }) => {
 	const [socket, setSocket] = useState(null);
 	const [onlineUsers, setOnlineUsers] = useState([]);
 	const { authUser } = useAuthContext();
-
+	//http://localhost:5003
 	useEffect(() => {
 		if (authUser) {
-			const socket = io("http://localhost:5003", {
+			const socket = io("https://realchat-cszt.onrender.com", {
 				query: {
 					userId: authUser._id,
 				},
